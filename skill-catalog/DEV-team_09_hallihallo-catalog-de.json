@@ -1,18 +1,18 @@
 {
   "v2": {
     "showsInCatalog": true,
-    "displayName": "TEAM_09 Virtual Help Desk",
-    "headline": "Voice based onboarding support",
-    "description": "Der Skill unterstützt bei häufigen Fragen, die im Zusammenhang mit Onboarding auftreten",
-    "iconUrl": "",
+    "displayName": "Virtual Help Desk",
+    "headline": "Voice based Onboarding Support",
+    "description": "Der Skill unterstützt bei häufigen Fragen, die im Zusammenhang mit Onboarding auftreten. Stelle ihm eine Frage zu einem Thema und Du bekommst einen Ansprechpartner für Dein Problem genannt.",
+    "iconUrl": "https://res.cloudinary.com/ideation/image/upload/w_64,h_64,c_fit,dpr_1/rr4pypsjbpzbrxkf9pje",
     "design": {
       "backgroundColor": "#4873bb"
     },
     "examplePhrases": [
-      "Magenta, wer hilft mir beim Thema Reisekosten",
-      "Magenta, wer hilft mir beim Thema neues Kennwort",
-      "Magenta, wer hilft mir beim Thema Kantine"
+      "... wer hilft mir beim Thema Reisekosten",
+      "... wer hilft mir beim Thema neues Kennwort",
+      "... wer hilft mir beim Thema Kantine"
     ]
   },
-  "fileVersion": 1
+  "fileVersion": 4
 }
