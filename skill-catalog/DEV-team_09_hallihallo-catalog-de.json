@@ -1,0 +1,18 @@
+{
+  "v2": {
+    "showsInCatalog": true,
+    "displayName": "TEAM_09 Virtual Help Desk",
+    "headline": "Voice based onboarding support",
+    "description": "Der Skill unterstützt bei häufigen Fragen, die im Zusammenhang mit Onboarding auftreten",
+    "iconUrl": "",
+    "design": {
+      "backgroundColor": "#4873bb"
+    },
+    "examplePhrases": [
+      "Magenta, wer hilft mir beim Thema Reisekosten",
+      "Magenta, wer hilft mir beim Thema neues Kennwort",
+      "Magenta, wer hilft mir beim Thema Kantine"
+    ]
+  },
+  "fileVersion": 1
+}
