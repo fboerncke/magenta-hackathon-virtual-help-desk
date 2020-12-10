@@ -1,0 +1,8 @@
+app: virtual-helpdesk
+component: express
+name: virtual-helpdesk
+
+inputs:
+  src: ./
+
+  
