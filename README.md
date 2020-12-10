@@ -19,6 +19,11 @@ The YouTube video describing a typical usage scenario can be found here: "tbd"
 
 ![The big picture](https://github.com/fboerncke/magenta-hackathon-virtual-help-desk/blob/main/images/bigPicture.png "The big picture")
 
+## Voice CMS
+Using the services from Airtable we built a Voice CMS to maintain the contents of the skill.
+
+![Voice CMS](https://github.com/fboerncke/magenta-hackathon-virtual-help-desk/blob/main/images/backendDataAirtable.png "Voice CMS")
+
 
 ## Code Artifacts
 
