@@ -5,7 +5,7 @@ This repository contains the code related deliverables for the Remote Rhapsody O
 
 ## YouTube Video
 
-The YouTube video describing a typical usage scenario can be found here: "tbd"
+The YouTube video describing a typical usage scenario can be found here: [Virtual Help Desk Promo Video - https://youtu.be/RlqjRHNi30k](https://youtu.be/RlqjRHNi30k)
 
 ## The Issue
 
