@@ -1,10 +1,7 @@
 #
 # voice-skill-sdk
 #
-# (C) 2020, YOUR_NAME (YOUR COMPANY), Deutsche Telekom AG
-#
-# This file is distributed under the terms of the MIT license.
-# For details see the file LICENSE in the top directory.
+# (C) 2020, Frank Börncke
 #
 #
 from skill_sdk import skill, Response  # , tell, ask
@@ -25,7 +22,7 @@ def handler(sometext: str = None) -> Response:
 
     # print("Search expression:" + sometext)
 
-    # get result from service
+    # get result from external webservice
     url = 'https://suudba32pj.execute-api.us-east-1.amazonaws.com/lookup?parameter=' + sometext
     response = requests.get(url, timeout=10)
 
@@ -46,23 +43,33 @@ def handler(sometext: str = None) -> Response:
                 }
             }
         }
+        # return response text with some fun sound
         return Response(notFoundMsg, result=Result(data))
 
     # now we know for sure that we found something
     dataSet = data['filteredResult'][0]
 
+    # text do be read by magenta smart speaker
     msg = dataSet['explanation']
+
+    # text for the card
+    cardMsg = msg
+
+    contactString = ""
 
     if "contactName" in dataSet:
         contactName = dataSet['contactName']
         msg = msg + " Erste Anlaufstelle: " + contactName + ". "
+        contactString = contactName
 
     if "contactData" in dataSet:
         contactData = dataSet['contactData']
         msg = msg + " Kontaktdaten: " + contactData + ". "
+        contactString = contactString + ": " + contactData
 
-    # text for the card
-    cardMsg = msg
+    # define a fallback message in case we have no contact data
+    if contactString == "":
+        contactString = "Das habe ich gefunden"
 
     # text to be spoken
     msg = msg + " Diese Informationen findest Du auch in Deiner Hallo Magenta App. "
@@ -71,27 +78,25 @@ def handler(sometext: str = None) -> Response:
     if "informationUrl" in dataSet:
         informationUrl = dataSet['informationUrl']
         msg = msg + " inklusive einer weiterführenden Internetadresse. "
-        cardMsg = cardMsg + unspin("Unter {der folgenden|dieser} Adresse findest Du weitere Informationen: ") + informationUrl
 
-    # Unfortunately I learned that card support is currently broken.
-    # But if it works again I'd love to use it to present additional information
+    # Define magenta app card content
     resultCard = Card(type_="GENERIC_DEFAULT",
                       title_text='Virtual Help Desk',
-                      type_description='Du hast gesucht nach: ' + sometext,
-                      text='Das habe ich gefunden',
+                      type_description='Suche nach: ' + sometext,
+                      text=contactString,
                       sub_text=cardMsg,
-                      #    action='internal://showResponseText', # TODO what is this about?
-                      action_text='Full text of the response in an overlay'
-                      # icon_url='http://images.linuxquestions.org/lqthumb.png'
+                      action=informationUrl,
+                      action_text=unspin(
+                          'Hier klicken für {weitere|zusätzliche|mehr} Informationen (') + informationUrl + ')',
                       )
 
     # We return the response
     return tell(msg, card=resultCard)
 
 
-# A number of R2D2 droid sounds are waiting for usaaaaaaaaaaaaaawithin an S3 repository
-# We select a random URL to be used in case of an error. This way the user might have
-# a better experience in case his request cannot be
+# A number of R2D2 droid sounds have been prepared within our S3 repository.
+# We select a random URL to be used in case of an error. This way the user
+# might have a better experience in case his request cannot be processed.
 def randomDroidSound():
     randomNumber = unspin(
         "{01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32|33|35|36|37|38|39|40|41|42|43|44|45|46|47|48|49|50}")
