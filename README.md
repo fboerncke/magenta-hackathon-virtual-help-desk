@@ -22,9 +22,14 @@ The YouTube video describing a typical usage scenario can be found here: [Virtua
 ## Voice CMS
 Using the services from Airtable we built a Voice CMS to maintain the contents of the skill.
 
-Access to the Voice CMS/Airtable is possible via a share link. For reasons of security I cannot share the link in GitHub but only on request.
+**Access to the Voice CMS/Airtable is possible via a share link. For reasons of security I cannot share the link in GitHub but only on request.**
 
 ![Voice CMS](https://github.com/fboerncke/magenta-hackathon-virtual-help-desk/blob/main/images/backendDataAirtable.png "Voice CMS")
+
+## Magenta App
+The results for the user request will also appear within a card in the Magenta App. The content shown depends on what information has been provided within the Voice CMS:
+
+![Hello Magenta App](https://github.com/fboerncke/magenta-hackathon-virtual-help-desk/blob/main/images/magenta-app.png "Hello Magenta App")
 
 
 ## Code Artifacts
