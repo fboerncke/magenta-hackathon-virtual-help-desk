@@ -1,6 +1,9 @@
 # Virtual Help Desk Skill for Hello Magenta Assistant (2nd Winner)
 
-This repository contains deliverables for the [Remote Rhapsody Online Hackathon](https://remote-rhapsody.hubraum.com/). This contribution has been selected 2nd Winner from the Jury.
+This repository contains deliverables for the [Remote Rhapsody Online Hackathon](https://remote-rhapsody.hubraum.com/). This contribution "Virtual Help Desk" has been selected 2nd Winner from the Jury.
+
+![2nd Winner](https://github.com/fboerncke/magenta-hackathon-virtual-help-desk/blob/main/images/hackathon-magenta-2nd-winner.png "2nd Winner")
+
 
 
 ## YouTube Video
